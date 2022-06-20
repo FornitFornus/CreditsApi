@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  credit:
+    build: ./spring-credit-docker
+    ports:
+      - "9090:9090"
+    depends_on:
+      - databases
+  customer:
+    build: ./spring-customer-docker
+    ports:
+      - "8080:8080"
+    depends_on:
+      - credit
+  databases:
+    container_name: "databases"
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: T@deusz123
+      MYSQL_USER: Tadeusz
+      MYSQL_PASSWORD: T@deusz123
+      MYSQL_DATABASE: creditDb
+    ports:
+      - "3307:3306"
+    restart: always
