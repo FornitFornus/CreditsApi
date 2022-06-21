@@ -11,3 +11,11 @@ Aplikacja służy do składowania oraz pobierania informacji o kredycie kliencki
 ## Przypadki użycia:
 - UC01: Złożenie informacji o kredycie
 - UC02: Pobranie informacji o kredycie
+
+# Uruchomienie
+
+docker-compose -f docker-compose.yml up
+
+- end-pointy: 
+- http://localhost:9090/credits
+- http://localhost:8080/showForGui
